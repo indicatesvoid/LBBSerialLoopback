@@ -16,7 +16,58 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Override point for customization after application launch
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    
+//    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+//    [viewController setTitle:@"View"];
+//    
+    // create nav controller //
+    
+    /**
+     // Create the PlainViewController (and give it a title)
+     PlainViewController *plainView = [[PlainViewController alloc] initWithNibName:@"PlainViewController" bundle:nil];
+     [plainView setTitle:@"PlainView"];
+     
+     // Create the NavRootView controller (and give it a title)
+     NavRootView *navRoot = [[NavRootView alloc] initWithNibName:@"NavRootView" bundle:nil];
+     [navRoot setTitle:@"NavRoot"];
+     
+     // Create our navigation controller using our NavRootView as it's root view
+     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:navRoot];
+     
+     // Make an array containing our plain view controller and our navigation controller
+     NSArray *viewArray = [NSArray arrayWithObjects:plainView, navController, nil];
+     
+     // Release the views and nav controller
+     [plainView release];
+     [navRoot release];
+     [navController release];
+     
+     // Create our tab bar controller
+     UITabBarController *tabbarController = [[UITabBarController alloc] init];
+     
+     // Tell the tab bar controller to use our array of views
+     [tabbarController setViewControllers:viewArray];
+     
+     // Finally, add the tabbar controller as a subview of the app window
+     [window addSubview:[tabbarController view]];
+     
+     [self.window makeKeyAndVisible];
+     
+     //-----//
+     // Initialize window view
+     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+     // Initialize tab bar controller, add tabs controllers
+     self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [self initializeTabBarItems];
+    self.window.rootViewController = self.tabBarController;
+    
+    [self.window makeKeyAndVisible];
+    return (YES);
+     **/
     return YES;
 }
 

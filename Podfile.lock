@@ -1,13 +1,10 @@
 PODS:
   - Bean-iOS-OSX-SDK (0.6.0)
-  - RSColorPicker (HEAD based on 0.8.2)
 
 DEPENDENCIES:
   - Bean-iOS-OSX-SDK
-  - RSColorPicker (HEAD)
 
 SPEC CHECKSUMS:
   Bean-iOS-OSX-SDK: 0402392daf60a7bf105e3d4fcadeb60c750045cb
-  RSColorPicker: ee8ca927ce7ced44a6d38ac96b295e8422c3016d
 
 COCOAPODS: 0.34.4

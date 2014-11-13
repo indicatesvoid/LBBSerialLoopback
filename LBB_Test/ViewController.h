@@ -7,15 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RSColorPickerView.h>
 #import <PTDBeanManager.h>
 
-@interface ViewController : UIViewController <RSColorPickerViewDelegate, UIActionSheetDelegate, PTDBeanManagerDelegate, PTDBeanDelegate> {
+@interface ViewController : UIViewController <UIActionSheetDelegate, PTDBeanManagerDelegate, PTDBeanDelegate> {
     
 }
-
-@property (nonatomic) RSColorPickerView *colorPicker;
-@property (weak, nonatomic) IBOutlet UIView *colorPickerView;
 
 @property (nonatomic, strong) PTDBean *bean;
 @property (nonatomic, strong) PTDBeanManager *beanManager;

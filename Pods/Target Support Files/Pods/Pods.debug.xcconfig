@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bean-iOS-OSX-SDK" "${PODS_ROOT}/Headers/Public/RSColorPicker" $(SRCROOT)/../bean-apple-sdk/source/Public
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bean-iOS-OSX-SDK" -isystem "${PODS_ROOT}/Headers/Public/RSColorPicker"
-OTHER_LDFLAGS = -ObjC -l"Pods-Bean-iOS-OSX-SDK" -l"Pods-RSColorPicker" -framework "Accelerate" -framework "CoreBluetooth" -framework "CoreGraphics" -framework "QuartzCore" -framework "UIKit"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bean-iOS-OSX-SDK" $(SRCROOT)/../bean-apple-sdk/source/Public
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Bean-iOS-OSX-SDK"
+OTHER_LDFLAGS = -ObjC -l"Pods-Bean-iOS-OSX-SDK" -framework "CoreBluetooth"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

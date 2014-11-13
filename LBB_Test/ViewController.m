@@ -33,15 +33,6 @@
     
     [self.batteryLabel setText:@"Not connected"];
     
-    // view that will display color picker (must be square) //
-    self.colorPicker = [[RSColorPickerView alloc] initWithFrame: self.colorPickerView.frame];
-    
-    // set delegate to receive events //
-    [self.colorPicker setDelegate:self];
-    
-    // add as subview //
-    [self.view addSubview:_colorPicker];
-    
     // setup bean manager //
     self.beans = [NSMutableDictionary dictionary];
     // instantiating the bean starts a scan. make sure you have you delegates implemented

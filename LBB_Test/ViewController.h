@@ -13,6 +13,8 @@
     
 }
 
+- (IBAction)sendMsgPressed:(id)sender;
+
 @property (nonatomic, strong) PTDBean *bean;
 @property (nonatomic, strong) PTDBeanManager *beanManager;
 // all the beans returned from a scan

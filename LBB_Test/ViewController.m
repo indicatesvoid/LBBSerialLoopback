@@ -52,6 +52,16 @@
     return [self.beans.allValues objectAtIndex:idx];
 }
 
+#pragma mark - Send message button actions
+- (IBAction)sendMsgPressed:(id)sender {
+    if(self.connected == NO) return;
+    
+    NSLog(@"sending serial data....");
+    NSString* str = @"hello hello hello hello";
+    NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    [self.bean sendSerialData:data];
+}
+
 #pragma mark - Action sheet
 - (void)connectBtnPressed:(id)sender {
     // show action sheet //
@@ -87,6 +97,13 @@
         _bean.delegate = self;
         [self.beanManager disconnectBean:_bean error:nil];
     }
+}
+
+#pragma mark - BeanDelegate
+- (void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data
+{
+    NSString *msg=[[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"message received: %@", msg);
 }
 
 #pragma mark - BeanManagerDelegate Callbacks
@@ -126,11 +143,15 @@
                                        userInfo:nil
                                         repeats:NO];
         // set timer to periodically update battery level //
-        self.updateStatusTimer = [NSTimer scheduledTimerWithTimeInterval:60.0
+        self.updateStatusTimer = [NSTimer scheduledTimerWithTimeInterval:120.0
                                          target:self
                                        selector:@selector(updateStatus:)
                                        userInfo:nil
                                         repeats:YES];
+        // send an initial serial message //
+        NSString* str = @"hello new bean";
+        NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
+        [self.bean sendSerialData:data];
     }
     
     [self.beanManager stopScanningForBeans_error:&error];
@@ -156,5 +177,4 @@
     NSString *batteryPct = [NSString stringWithFormat:@"Battery: %ld%%", (long)pct];
     [self.batteryLabel setText:batteryPct];
 }
-
 @end
